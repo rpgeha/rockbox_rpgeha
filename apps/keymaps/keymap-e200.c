@@ -384,64 +384,10 @@ const struct button_mapping* get_context_mapping(int context)
     switch (context)
     {
         case CONTEXT_STD:
-            return button_context_standard;
-            
-        case CONTEXT_WPS:
-            return button_context_wps;
-
-        case CONTEXT_LIST:
-            return button_context_list;
-        case CONTEXT_TREE:
-        case CONTEXT_MAINMENU:
-            if (global_settings.hold_lr_for_scroll_in_list)
-                return button_context_listtree_scroll_without_combo;
-            else 
-                return button_context_listtree_scroll_with_combo;
-        case CONTEXT_CUSTOM|CONTEXT_TREE:
-            return button_context_tree;
-
-        case CONTEXT_SETTINGS:
-            return button_context_settings;
-        case CONTEXT_CUSTOM|CONTEXT_SETTINGS:
-        case CONTEXT_SETTINGS_COLOURCHOOSER:
-        case CONTEXT_SETTINGS_EQ:
-        case CONTEXT_SETTINGS_RECTRIGGER:
-            return button_context_settings_right_is_inc;
-
-        case CONTEXT_SETTINGS_TIME:
-            return button_context_settings_time;
-
-        case CONTEXT_YESNOSCREEN:
-            return button_context_yesno;
-        case CONTEXT_FM:
             return button_context_radio;
-        case CONTEXT_BOOKMARKSCREEN:
-            return button_context_bmark;
-        case CONTEXT_QUICKSCREEN:
-            return button_context_quickscreen;
-        case CONTEXT_PITCHSCREEN:
-            return button_context_pitchscreen;
-        case CONTEXT_RECSCREEN:
-            return button_context_recscreen;
-        case CONTEXT_KEYBOARD:
-        case CONTEXT_MORSE_INPUT:
-            return button_context_keyboard;
-#ifdef USB_ENABLE_HID
-        case CONTEXT_USB_HID:
-            return button_context_usb_hid;
-        case CONTEXT_USB_HID_MODE_MULTIMEDIA:
-            return button_context_usb_hid_mode_multimedia;
-        case CONTEXT_USB_HID_MODE_PRESENTATION:
-            return button_context_usb_hid_mode_presentation;
-        case CONTEXT_USB_HID_MODE_BROWSER:
-            return button_context_usb_hid_mode_browser;
-#ifdef HAVE_USB_HID_MOUSE
-        case CONTEXT_USB_HID_MODE_MOUSE:
-            return button_context_usb_hid_mode_mouse;
-#endif
-#endif
+            
         default:
-            return button_context_standard;
+            return button_context_radio;
     } 
-    return button_context_standard;
+    return button_context_radio;
 }
