@@ -1888,7 +1888,7 @@
     *: "Sort Files"
   </source>
   <dest>
-    *: "Sort Files"
+    *: "Sort Files in this menu"
   </dest>
   <voice>
     *: "sort files"
