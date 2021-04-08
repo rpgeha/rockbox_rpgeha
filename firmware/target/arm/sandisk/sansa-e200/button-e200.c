@@ -295,8 +295,6 @@ void button_int(void)
 
     int_btn = BUTTON_NONE;
 
-	if ((state & 0x10) == 0) int_btn |= BUTTON_SELECT; /* The centre button */
-		
     if (!_button_hold())
     {
         /* Read normal buttons */
@@ -304,6 +302,7 @@ void button_int(void)
         if ((state & 0x02) == 0) int_btn |= BUTTON_DOWN;
         if ((state & 0x04) == 0) int_btn |= BUTTON_RIGHT;
         if ((state & 0x08) == 0) int_btn |= BUTTON_LEFT;
+        if ((state & 0x10) == 0) int_btn |= BUTTON_SELECT; /* The centre button */
         if ((state & 0x20) == 0) int_btn |= BUTTON_UP; /* The "play" button */
         if ((state & 0x40) != 0) int_btn |= BUTTON_POWER;
     }
